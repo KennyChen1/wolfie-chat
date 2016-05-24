@@ -1,0 +1,36 @@
+05/06/16-01:44PM, mike, LOGIN, 127.0.0.1:2326, success, oisudfh 05/06/16-01:44PM, mike, CMD, /time, succes, client
+05/06/16-01:44PM, mike, CMD, /listu, success, client
+05/06/16-01:45PM, kenny, LOGIN, 127.0.0.1:2326, success, oisudfh 05/06/16-01:45PM, kenny, CMD, /listy, success, client
+05/06/16-01:45PM, kenny, CMD, /listu, success, client
+05/06/16-01:45PM, mike, CMD, /listu, success, client
+05/06/16-02:05PM, mike, LOGIN, 127.0.0.1:2325, success, sidjhs 05/06/16-02:05PM, mike, LOGIN, 127.0.0.1:2325, fail, ERR 00 USER NAME TAKEN mike 05/06/16-02:05PM, mike, LOGIN, 127.0.0.1:2325, success, sidjhs 05/06/16-02:06PM, mike, CMD, /time, succes, client
+05/06/16-02:06PM, mike, CMD, /time, succes, client
+05/06/16-02:06PM, mike, LOGOUT, intentional
+05/06/16-02:06PM, mike, LOGOUT, intentional
+05/06/16-02:07PM, mike, LOGIN, 127.0.0.1:2325, success, sidjhs 05/06/16-02:07PM, mike, LOGIN, 127.0.0.1:2325, fail, ERR 02 BAD PASSWORD 05/06/16-02:08PM, mike, LOGOUT, intentional
+05/06/16-02:08PM, mike, LOGIN, 127.0.0.1:2325, success, sidjhs 05/06/16-02:12PM, mike, LOGIN, 127.0.0.1:2325, fail, ERR 01 USER NOT AVAILABLE 05/06/16-02:26PM, mike, LOGIN, 127.0.0.1:2325, success, sidjhs 05/06/16-02:27PM, mike, LOGIN, 127.0.0.1:2325, success, sidjhs 05/06/16-02:27PM, mike, LOGIN, 127.0.0.1:2325, fail, ERR 00 USER NAME TAKEN mike 05/06/16-02:28PM, kenny, LOGIN, 127.0.0.1:2325, success, sidjhs 05/06/16-02:30PM, mike2, LOGIN, 127.0.0.1:2325, success, sidjhs 05/06/16-02:31PM, mike3423, LOGIN, 127.0.0.1:2325, fail, ERR 02 BAD PASSWORD 05/06/16-02:31PM, mike2, LOGOUT, intentional
+05/06/16-02:31PM, kenny, LOGOUT, intentional
+05/06/16-02:32PM, mike34, LOGIN, 127.0.0.1:2325, success, sidjhs 05/06/16-02:32PM, kenny2, LOGIN, 127.0.0.1:2325, fail, ERR 02 BAD PASSWORD 05/06/16-02:32PM, mike3, LOGIN, 127.0.0.1:2325, success, sidjhs 05/06/16-04:06PM, kenny2, LOGIN, 127.0.0.1:2325, success, sidjhs 05/06/16-04:06PM, kenny2, CMD, A!qwe2, failure, client
+05/06/16-04:06PM, mike3, LOGIN, 127.0.0.1:2325, success, sidjhs 05/06/16-04:06PM, mike3, CMD, A!qwe2, failure, client
+05/06/16-04:06PM, kenny2, CMD, A!qwe2, failure, client
+05/06/16-04:06PM, mike34, LOGIN, 127.0.0.1:2325, success, sidjhs 05/06/16-04:10PM, mike3, LOGIN, 127.0.0.1:2325, success, sidjhs 05/06/16-04:13PM, kenny2, LOGIN, 127.0.0.1:2325, success, sidjhs 05/06/16-04:13PM, kenny2, CMD, A!qwe2, failure, client
+05/06/16-04:13PM, mike3, LOGIN, 127.0.0.1:2325, success, sidjhs 05/06/16-04:13PM, mike3, CMD, A!qwe2, failure, client
+05/06/16-04:13PM, kenny2, CMD, A!qwe2, failure, client
+05/06/16-04:13PM, mike34, LOGIN, 127.0.0.1:2325, success, sidjhs 05/06/16-04:13PM, mike3, CMD, ./chat kenny2 watup, failure, client
+05/06/16-04:13PM, kenny2, CMD, ./chat kenny2 watup, failure, client
+05/06/16-04:13PM, mike34, CMD, ./chat kenny2 watup, failure, client
+05/06/16-04:14PM, mike3, CMD, ./chat kenny2 "idjf", failure, client
+05/06/16-04:14PM, kenny2, CMD, ./chat kenny2 "idjf", failure, client
+05/06/16-04:14PM, mike34, CMD, ./chat kenny2 "idjf", failure, client
+05/06/16-04:14PM, mike3, CMD, ./chat kenny2 mike34 "isjdf", failure, client
+05/06/16-04:14PM, kenny2, CMD, ./chat kenny2 mike34 "isjdf", failure, client
+05/06/16-04:14PM, mike34, CMD, ./chat kenny2 mike34 "isjdf", failure, client
+05/06/16-09:58PM, mike3, LOGIN, 127.0.0.1:2326, success, sidjhs 05/06/16-09:59PM, kenny2, LOGIN, 127.0.0.1:2326, success, sidjhs 05/06/16-09:59PM, kenny2, CMD, /chat, success, client
+05/06/16-09:59PM, kenny2, MSG, to, mike3, "hey fuck head"
+ 05/21/16-08:08PM, miked, LOGIN, 127.0.0.1:2325, success, yoo 05/21/16-08:09PM, miked2, LOGIN, 127.0.0.1:2325, success, yoo 05/21/16-08:09PM, miked2, CMD, /chat, success, client
+05/21/16-08:09PM, miked2, MSG, to, miked, hello
+ 05/21/16-08:10PM, miked, MSG, from, , isjd 05/21/16-08:10PM, miked, MSG, from, sda,  05/21/16-08:10PM, miked, MSG, to, sda,  05/21/16-08:11PM, miked, LOGIN, 127.0.0.1:2325, fail, ERR 00 USER NAME TAKEN miked 05/24/16-03:53PM, miked, LOGIN, 127.0.0.1:2325, success, yoo 05/24/16-03:54PM, miked2, LOGIN, 127.0.0.1:2325, success, yoo 05/24/16-03:54PM, miked2, CMD, /chat, success, client
+05/24/16-03:54PM, miked2, MSG, to, miked, yoo
+ 05/24/16-03:54PM, miked, MSG, from, miked2, sda 05/24/16-03:54PM, miked, MSG, to, miked2, sda 05/24/16-03:54PM, miked, MSG, from, miked2, heya 05/24/16-03:54PM, miked, MSG, to, miked2, heya 05/24/16-04:00PM, miked2, CMD, /lofour, success, client
+05/24/16-04:00PM, miked2, LOGOUT, intentional
+05/24/16-04:00PM, miked2, LOGIN, 127.0.0.1:2325, success, yoo 
