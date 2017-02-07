@@ -13,20 +13,19 @@ WOLFIE Protocol:
 
 The server and client communicate with each other using the WOLFIE Protocol. 
 
-For example, logging in to the server: When the server accepts a client connection request, the client initiates the login transaction by sending the "WOLFIE \r\n\r\n" verb to the server. The server responds to the client with "EIFLOW \r\n\r\n". The client identifies itself with the "IAM <name>" verb. If login is successful, the server responds with "HI <name> \r\n\r\n", and the message of the day with the "MOTD <message> \r\n\r\n" verb. If login is unsuccessful, the server sends the "ERR" verb followed by the <errorcode> and the corresponding <message>.
+For example, logging in to the server: When the server accepts a client connection request, the client initiates the login transaction by sending the "WOLFIE \r\n\r\n" verb to the server. The server responds to the client with "EIFLOW \r\n\r\n". The client identifies itself with the "IAM [name]" verb. If login is successful, the server responds with "HI [name] \r\n\r\n", and the message of the day with the "MOTD [message] \r\n\r\n" verb. If login is unsuccessful, the server sends the "ERR [errorcode] [message]" verb.
 
-Whatever verb the client sends to the server, that same verb backwards will be sent back to the client.
 List of all verbs:
   "WOLFIE", "EIFLOW"
-  "IAM <name>", "HI <name>", "BYE"
-  "MOTD <message>", "ERR <errorcode> <message>"
-  "TIME", "EMIT <timeinsec>"
-  "LISTU", "UTSIL <user1> <user2>..",
-  "MSG <TO> <FROM> <MESSAGE>"
-  "UOFF <name>"
+  "IAM [name]", "HI [name]", "BYE"
+  "MOTD [message]", "ERR [errorcode] [message]"
+  "TIME", "EMIT [timeinsec]"
+  "LISTU", "UTSIL [user1] [user2]..",
+  "MSG [TO] [FROM] [MESSAGE]"
+  "UOFF [name]"
   
-  Register new user: "IAMNEW <name>", "HINEW <name>", "NEWPASS <password>, "SSAPWEN"   
-  Authenticate existing user: "AUTH <name>, PASS <password>, "SSAP"
+  Register new user: "IAMNEW [name]", "HINEW [name]", "NEWPASS [password], "SSAPWEN"   
+  Authenticate existing user: "AUTH [name], PASS [password], "SSAP"
 
 Server usage and commands:
 
@@ -61,7 +60,7 @@ SERVER_PORT   The port to connect to.
 /help : Lists all commands which the client accepts.
 /logout : Disconnect with the server, closes all chat windows.
 /listu : Asks the server who has been connected.
-/chat <to> <msg> : Requires the name of the user to send the message to and the message to be sent.
+/chat [to] [msg] : Requires the name of the user to send the message to and the message to be sent.
 
 
 Chat Program:
@@ -79,7 +78,7 @@ At least 5 characters in length, at least 1 uppercase character, at least 1 symb
 
 User Authentication:
 
-To protect passwords, we store a 1-way crytographic hash of the password. When a user attempts to login, the password is sent over the network, and is hashed by the server. The server will compare the stored hashed value with the hash value it just generated. To help defend against a cracked password, we add salt to everyone's password before hashing it. We used the hash function sha256, and the rand function to generate the salt (https://wwww.openssl.org/docs/manmaster/crypto/rand.html)
+To protect passwords, we store a 1-way crytographic hash of the password. When a user attempts to login, the password is sent over the network, and is hashed by the server. The server will compare the stored hashed value with the hash value it just generated. To help defend against a cracked password, we add salt to everyone's password before hashing it. We used the hash function sha256 available in openssl/sha.h, and the rand function, available in openssl/rand.h, to generate the salt (https://wwww.openssl.org/docs/manmaster/crypto/rand.html). Install openssl and openssl-dev using "sudo apt-get install openssl libssl-dev"
 
 
 Error Codes:
