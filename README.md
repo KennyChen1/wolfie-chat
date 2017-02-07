@@ -16,7 +16,7 @@ The server and client communicate with each other using the WOLFIE Protocol.
 For example, logging in to the server: When the server accepts a client connection request, the client initiates the login transaction by sending the "WOLFIE \r\n\r\n" verb to the server. The server responds to the client with "EIFLOW \r\n\r\n". The client identifies itself with the "IAM [name]" verb. If login is successful, the server responds with "HI [name] \r\n\r\n", and the message of the day with the "MOTD [message] \r\n\r\n" verb. If login is unsuccessful, the server sends the "ERR [errorcode] [message]" verb.
 
 List of all verbs:
-
+  ...
   "WOLFIE", "EIFLOW",
   
   "IAM [name]", "HI [name]", "BYE",
@@ -34,6 +34,7 @@ List of all verbs:
   Register new user: "IAMNEW [name]", "HINEW [name]", "NEWPASS [password], "SSAPWEN"   
   
   Authenticate existing user: "AUTH [name], PASS [password], "SSAP"
+  ...
   
   
   
