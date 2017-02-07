@@ -34,6 +34,9 @@ List of all verbs:
   Register new user: "IAMNEW [name]", "HINEW [name]", "NEWPASS [password], "SSAPWEN"   
   
   Authenticate existing user: "AUTH [name], PASS [password], "SSAP"
+  
+  
+  
 
 Server usage and commands:
 
@@ -59,6 +62,8 @@ ACCOUNTS_FILE   File containing username and password data to be loaded upon exe
 /accts : Dumps a list of all user accounts and information.
 
 The server uses two linked lists, a Users list and an Accounts list. The Users list is a list of all u sers currently logged into the server. The Accounts list is the persistent list of users and their passwords loaded and saved to a file on the server's execution and termination respectively. 
+
+
 
 
 Client usage and commands:
