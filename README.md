@@ -18,11 +18,11 @@ For example, logging in to the server: When the server accepts a client connecti
 ```
 List of all verbs:
  
-  "WOLFIE", "EIFLOW",
-  "IAM [name]", "HI [name]", "BYE",
-  "MOTD [message]", "ERR [errorcode] [message]",
-  "TIME", "EMIT [timeinsec]",
-  "LISTU", "UTSIL [user1] [user2]..",
+  "WOLFIE", "EIFLOW"
+  "IAM [name]", "HI [name]", "BYE"
+  "MOTD [message]", "ERR [errorcode] [message]"
+  "TIME", "EMIT [timeinsec]"
+  "LISTU", "UTSIL [user1] [user2].."
   "MSG [TO] [FROM] [MESSAGE]"
   "UOFF [name]"
   
