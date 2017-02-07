@@ -1,4 +1,4 @@
-# Full scale chat system written in C, built by Michael Dadurian and Kenny Chen.
+# Wolfie Chat written in C, built by Michael Dadurian and Kenny Chen.
 
 ## Overview:
 
@@ -19,21 +19,14 @@ For example, logging in to the server: When the server accepts a client connecti
 List of all verbs:
  
   "WOLFIE", "EIFLOW",
-  
   "IAM [name]", "HI [name]", "BYE",
-  
   "MOTD [message]", "ERR [errorcode] [message]",
-  
   "TIME", "EMIT [timeinsec]",
-  
   "LISTU", "UTSIL [user1] [user2]..",
-  
   "MSG [TO] [FROM] [MESSAGE]"
-  
   "UOFF [name]"
   
   Register new user: "IAMNEW [name]", "HINEW [name]", "NEWPASS [password], "SSAPWEN"   
-  
   Authenticate existing user: "AUTH [name], PASS [password], "SSAP"
   ```
   
@@ -45,13 +38,9 @@ List of all verbs:
   ./server [-h|-v] PORT_NUMBER MOTD [ACCOUNTS_FILE]
 
   -h              Displays help menu and returns EXIT_SUCCESS.
-
   -v              Verbose print all incoming and outgoing protocol verbs and content.
-
   PORT_NUMBER     Port number to listen on.
-
   MOTD            Message to display to the client when they connect.
-
   ACCOUNTS_FILE   File containing username and password data to be loaded upon execution.
   ```
 
@@ -69,21 +58,18 @@ The server uses two linked lists, a Users list and an Accounts list. The Users l
 
 
 
-Client usage and commands:
-
+## Client usage and commands:
+ ```
   ./client [-hcv] NAME SERVER_IP SERVER_PORT
 
   -h            Displays this help menu, and returns EXIT_SUCCESS
-
   -c            Requests to server to create a new user
-
   -v            Verbose print all incoming and outgoing protocol verbs and content.
-
+  
   NAME          This is the username to display when chatting.
-
   SERVER_IP     The ip address of the server to connect to.
-
   SERVER_PORT   The port to connect to.
+  ```
 
 
 /time : Asks the server how long the client has been connected. The duration of the connection is returned in seconds, and the client program converts this time to hours, minutes, and seconds.
@@ -97,27 +83,29 @@ Client usage and commands:
 /chat [to] [msg] : Requires the name of the user to send the message to and the message to be sent.
 
 
-Chat Program:
+## Chat Program:
 
+```
 ./chat UNIX_SOCKET_FD
 
 UNIX_SOCKET_FD        The Unix Domain File Descriptor number.
+```
 
 
 When the server sends the MSG verb to the client, it forks and execs an xterm (http://manpages.ubuntu.com/manpages/wily/end/man1/xterm.1.html), which in turn execs the chat program in a basic terminal. We used Unix domain sockets to communicate with the parent client process, using socketpair(2) (see http://linux.die.net/man/3/socketpair).
 
 
 
-Password Criteria:
+## Password Criteria:
 
 At least 5 characters in length, at least 1 uppercase character, at least 1 symbol character, and at least 1 number character.
 
-User Authentication:
+## User Authentication:
 
 To protect passwords, we store a 1-way crytographic hash of the password. When a user attempts to login, the password is sent over the network, and is hashed by the server. The server will compare the stored hashed value with the hash value it just generated. To help defend against a cracked password, we add salt to everyone's password before hashing it. We used the hash function sha256 available in openssl/sha.h, and the rand function, available in openssl/rand.h, to generate the salt (https://wwww.openssl.org/docs/manmaster/crypto/rand.html). Install openssl and openssl-dev using "sudo apt-get install openssl libssl-dev"
 
 
-Error Codes:
+## Error Codes:
 
 00  USER NAME TAKEN
 
