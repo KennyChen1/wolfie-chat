@@ -38,16 +38,24 @@ List of all verbs:
 Server usage and commands:
 
 ./server [-h|-v] PORT_NUMBER MOTD [ACCOUNTS_FILE]
+
 -h              Displays help menu and returns EXIT_SUCCESS.
+
 -v              Verbose print all incoming and outgoing protocol verbs and content.
+
 PORT_NUMBER     Port number to listen on.
+
 MOTD            Message to display to the client when they connect.
+
 ACCOUNTS_FILE   File containing username and password data to be loaded upon execution.
 
 
 /users : Dumps a list of currently logged in users to stdout.
+
 /help : Lists all commands which the server accepts and what they do.
+
 /shutdown : Server cleanly disconnects all connected users.
+
 /accts : Dumps a list of all user accounts and information.
 
 The server uses two linked lists, a Users list and an Accounts list. The Users list is a list of all u sers currently logged into the server. The Accounts list is the persistent list of users and their passwords loaded and saved to a file on the server's execution and termination respectively. 
@@ -56,25 +64,37 @@ The server uses two linked lists, a Users list and an Accounts list. The Users l
 Client usage and commands:
 
 ./client [-hcv] NAME SERVER_IP SERVER_PORT
+
 -h            Displays this help menu, and returns EXIT_SUCCESS
+
 -c            Requests to server to create a new user
+
 -v            Verbose print all incoming and outgoing protocol verbs and content.
+
 NAME          This is the username to display when chatting.
+
 SERVER_IP     The ip address of the server to connect to.
+
 SERVER_PORT   The port to connect to.
 
 
 /time : Asks the server how long the client has been connected. The duration of the connection is returned in seconds, and the client program converts this time to hours, minutes, and seconds.
+
 /help : Lists all commands which the client accepts.
+
 /logout : Disconnect with the server, closes all chat windows.
+
 /listu : Asks the server who has been connected.
+
 /chat [to] [msg] : Requires the name of the user to send the message to and the message to be sent.
 
 
 Chat Program:
 
 ./chat UNIX_SOCKET_FD
+
 UNIX_SOCKET_FD        The Unix Domain File Descriptor number.
+
 
 When the server sends the MSG verb to the client, it forks and execs an xterm (http://manpages.ubuntu.com/manpages/wily/end/man1/xterm.1.html), which in turn execs the chat program in a basic terminal. We used Unix domain sockets to communicate with the parent client process, using socketpair(2) (see http://linux.die.net/man/3/socketpair).
 
@@ -92,8 +112,11 @@ To protect passwords, we store a 1-way crytographic hash of the password. When a
 Error Codes:
 
 00  USER NAME TAKEN
+
 01  USER NOT AVAILABLE
+
 02  BAD PASSWORD
+
 100 INTERNAL SERVER ERROR(default)
 
 
