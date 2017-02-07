@@ -1,6 +1,6 @@
-Full scale chat system written in C, built by Michael Dadurian and Kenny Chen.
+# Full scale chat system written in C, built by Michael Dadurian and Kenny Chen.
 
-Overview:
+## Overview:
 
 Clients attempt to establish a connection with the server through the Accept thread. The Accept thread will create a connection with the Client and spawn the Login thread. The Login thread then communicates with the client via the Wolfie Protocol to attempt to log the user into the Wolfie Chat system. Upon successful/unsuccessful login, the Login thread terminates. A Login thread is created for each connection attempt. Multiple Login threads can exist simultaneously, so a Login Queue was implemented to avoid concurrency issues.
 
@@ -9,14 +9,15 @@ Once logged in, the server acts as a middle man for all communications between t
 The Accept thread uses I/O multiplexing to listen for input on both the server socket and from stdin. We chose to use the "select" interface, see http://linux.die.net/man/2/select. In the server, we multiplex on each socket for the connected users in the communication thread, and in the accept thread we multiplex on the accept socket and stdin.
 
 
-WOLFIE Protocol:
+## WOLFIE Protocol:
 
 The server and client communicate with each other using the WOLFIE Protocol. 
 
 For example, logging in to the server: When the server accepts a client connection request, the client initiates the login transaction by sending the "WOLFIE \r\n\r\n" verb to the server. The server responds to the client with "EIFLOW \r\n\r\n". The client identifies itself with the "IAM [name]" verb. If login is successful, the server responds with "HI [name] \r\n\r\n", and the message of the day with the "MOTD [message] \r\n\r\n" verb. If login is unsuccessful, the server sends the "ERR [errorcode] [message]" verb.
 
+```
 List of all verbs:
-  ...
+ 
   "WOLFIE", "EIFLOW",
   
   "IAM [name]", "HI [name]", "BYE",
@@ -34,13 +35,13 @@ List of all verbs:
   Register new user: "IAMNEW [name]", "HINEW [name]", "NEWPASS [password], "SSAPWEN"   
   
   Authenticate existing user: "AUTH [name], PASS [password], "SSAP"
-  ...
+  ```
   
   
   
 
-Server usage and commands:
-
+## Server usage and commands:
+```
   ./server [-h|-v] PORT_NUMBER MOTD [ACCOUNTS_FILE]
 
   -h              Displays help menu and returns EXIT_SUCCESS.
@@ -52,6 +53,7 @@ Server usage and commands:
   MOTD            Message to display to the client when they connect.
 
   ACCOUNTS_FILE   File containing username and password data to be loaded upon execution.
+  ```
 
 
 /users : Dumps a list of currently logged in users to stdout.
