@@ -13,7 +13,7 @@ WOLFIE Protocol:
 
 The server and client communicate with each other using the WOLFIE Protocol. 
 
-For example, logging in to the server: When the server accepts a client connection request, the client initiates the login transaction by sending the "WOLFIE \r\n\r\n" verb to the server. The server responds to the client with "EIFLOW \r\n\r\n". The client identifies itself with the "IAM" verb. If login is successful, the server responds with "HI <name> \r\n\r\n", and the message of the day with the "MOTD <message> \r\n\r\n" verb. If login is unsuccessful, the server sends the "ERR" verb followed by the <errorcode> and the corresponding <message>.
+For example, logging in to the server: When the server accepts a client connection request, the client initiates the login transaction by sending the "WOLFIE \r\n\r\n" verb to the server. The server responds to the client with "EIFLOW \r\n\r\n". The client identifies itself with the "IAM <name>" verb. If login is successful, the server responds with "HI <name> \r\n\r\n", and the message of the day with the "MOTD <message> \r\n\r\n" verb. If login is unsuccessful, the server sends the "ERR" verb followed by the <errorcode> and the corresponding <message>.
 
 Whatever verb the client sends to the server, that same verb backwards will be sent back to the client.
 List of all verbs:
