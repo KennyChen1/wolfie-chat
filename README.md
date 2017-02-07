@@ -40,17 +40,17 @@ List of all verbs:
 
 Server usage and commands:
 
-./server [-h|-v] PORT_NUMBER MOTD [ACCOUNTS_FILE]
+  ./server [-h|-v] PORT_NUMBER MOTD [ACCOUNTS_FILE]
 
--h              Displays help menu and returns EXIT_SUCCESS.
+  -h              Displays help menu and returns EXIT_SUCCESS.
 
--v              Verbose print all incoming and outgoing protocol verbs and content.
+  -v              Verbose print all incoming and outgoing protocol verbs and content.
 
-PORT_NUMBER     Port number to listen on.
+  PORT_NUMBER     Port number to listen on.
 
-MOTD            Message to display to the client when they connect.
+  MOTD            Message to display to the client when they connect.
 
-ACCOUNTS_FILE   File containing username and password data to be loaded upon execution.
+  ACCOUNTS_FILE   File containing username and password data to be loaded upon execution.
 
 
 /users : Dumps a list of currently logged in users to stdout.
@@ -68,19 +68,19 @@ The server uses two linked lists, a Users list and an Accounts list. The Users l
 
 Client usage and commands:
 
-./client [-hcv] NAME SERVER_IP SERVER_PORT
+  ./client [-hcv] NAME SERVER_IP SERVER_PORT
 
--h            Displays this help menu, and returns EXIT_SUCCESS
+  -h            Displays this help menu, and returns EXIT_SUCCESS
 
--c            Requests to server to create a new user
+  -c            Requests to server to create a new user
 
--v            Verbose print all incoming and outgoing protocol verbs and content.
+  -v            Verbose print all incoming and outgoing protocol verbs and content.
 
-NAME          This is the username to display when chatting.
+  NAME          This is the username to display when chatting.
 
-SERVER_IP     The ip address of the server to connect to.
+  SERVER_IP     The ip address of the server to connect to.
 
-SERVER_PORT   The port to connect to.
+  SERVER_PORT   The port to connect to.
 
 
 /time : Asks the server how long the client has been connected. The duration of the connection is returned in seconds, and the client program converts this time to hours, minutes, and seconds.
