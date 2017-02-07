@@ -4,7 +4,7 @@ Overview:
 
 Clients attempt to establish a connection with the server through the Accept thread. The Accept thread will create a connection with the Client and spawn the Login thread. The Login thread then communicates with the client via the Wolfie Protocol to attempt to log the user into the Wolfie Chat system. Upon successful/unsuccessful login, the Login thread terminates. A Login thread is created for each connection attempt. Multiple Login threads can exist simultaneously, so a Login Queue was implemented to avoid concurrency issues.
 
-Once logged in, the server acts as a middle for all communications between the users connected to the server. A Communication thread on the server will be spawned when the first user logs in, and then terminates when no user is logged in. The Communication thread services all additional users who connect.
+Once logged in, the server acts as a middle man for all communications between the users connected to the server. A Communication thread on the server will be spawned when the first user logs in, and then terminates when no user is logged in. The Communication thread services all additional users who connect.
 
 The Accept thread uses I/O multiplexing to listen for input on both the server socket and from stdin. We chose to use the "select" interface, see http://linux.die.net/man/2/select. In the server, we multiplex on each socket for the connected users in the communication thread, and in the accept thread we multiplex on the accept socket and stdin.
 
